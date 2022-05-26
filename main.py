@@ -1,6 +1,8 @@
 from Env1_Normal import Env1_cal
+from Env2_Freeze import Env2_cal
 
-x1=0.8
-x2=0.8
-y=Env1_cal(x1,x2)
+t=-8
+s=0.8
+dt=11
+y=Env2_cal(s,t,dt)
 print(y)

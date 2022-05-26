@@ -9,7 +9,7 @@ def Env1_cal(water:float,humidity:float)->int:
     check()
     x_W_range = np.arange(0, 1, 0.01,np.float32)
     x_H_range = np.arange(0, 1, 0.01,np.float32)
-    y_E_range = np.arange(0, 3, 0.1,np.float32)
+    y_E_range = np.arange(1, 6, 0.1,np.float32)
     # 定义模糊控制变量
     x_W = ctrl.Antecedent(x_W_range, 'water')
     x_H = ctrl.Antecedent(x_H_range, 'humidity')
@@ -23,7 +23,7 @@ def Env1_cal(water:float,humidity:float)->int:
     x_H["LW"]=fuzz.trimf(x_H_range, [0.35, 0.50, 0.65])
     x_H["W"] =fuzz.trimf(x_H_range, [0.55, 0.70, 0.85])
     x_H["VW"]=fuzz.trimf(x_H_range, [0.75, 1.00, 1.00])
-    y_E["A"] =fuzz.trimf(y_E_range, [0, 1, 2])
+    y_E["A"] =fuzz.trimf(y_E_range, [1, 1, 2])
     y_E["B"] =fuzz.trimf(y_E_range, [1, 2, 3])
     y_E["C"] =fuzz.trimf(y_E_range, [2, 3, 4])
     # 解模糊器
