@@ -3,11 +3,10 @@ from Env2_Freeze import Env2_cal
 from Env3_Sea import Env3_cal
 from Env4_Cl import Env4_cal
 from Env5_Salt import Env5_cal
+from Env7_Abrasion import Env7_cal
 
-d=1.2
-t=22
-h=15
-l=0
-pos=20
-y=Env3_cal(d,t,h,l,pos)
+s=0.4
+w=5
+a=1
+y=Env7_cal(w,s,a)
 print(y)
