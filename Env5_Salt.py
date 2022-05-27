@@ -70,10 +70,10 @@ def Env5_2_cal(p:float,dtempo:float,dw:float)->int:
     y_E["F"] =fuzz.trimf(y_E_range, [5, 6, 6])
     y_E.defuzzify_method="centroid"
     # 规则
-    rule1=ctrl.Rule(antecedent=((x_P["S"] & x_T["S"] & x_W["M"])),consequent=y_E["D"],label="1")
-    rule2=ctrl.Rule(antecedent=((x_P["S"] & x_T["S"] & x_W["H"])),consequent=y_E["D"],label="2")
-    rule3=ctrl.Rule(antecedent=((x_P["S"] & x_T["L"] & x_W["M"])),consequent=y_E["D"],label="3")
-    rule4=ctrl.Rule(antecedent=((x_P["S"] & x_T["L"] & x_W["H"])),consequent=y_E["E"],label="4")
+    rule1=ctrl.Rule(antecedent=((x_P["S"] & x_T["M"] & x_W["M"])),consequent=y_E["D"],label="1")
+    rule2=ctrl.Rule(antecedent=((x_P["S"] & x_T["M"] & x_W["H"])),consequent=y_E["D"],label="2")
+    rule3=ctrl.Rule(antecedent=((x_P["S"] & x_T["H"] & x_W["M"])),consequent=y_E["D"],label="3")
+    rule4=ctrl.Rule(antecedent=((x_P["S"] & x_T["H"] & x_W["H"])),consequent=y_E["E"],label="4")
     rule5=ctrl.Rule(antecedent=((x_P["M"])),consequent=y_E["E"],label="5")
     rule6=ctrl.Rule(antecedent=((x_P["L"])),consequent=y_E["F"],label="6")
     rule=[rule1,rule2,rule3,rule4,rule5,rule6]
