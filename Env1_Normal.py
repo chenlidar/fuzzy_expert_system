@@ -36,8 +36,11 @@ def Env1_cal(water:float,humidity:float)->int:
     rule5=ctrl.Rule(antecedent=((x_W["O"] & x_H["LW"])),consequent=y_E["C"],label="5")
     rule6=ctrl.Rule(antecedent=((x_W["O"] & x_H["W"])),consequent=y_E["C"],label="6")
     rule7=ctrl.Rule(antecedent=((x_W["O"] & x_H["VW"])),consequent=y_E["A"],label="7")
-    rule8=ctrl.Rule(antecedent=((x_W["F"] & x_H["VW"])),consequent=y_E["A"],label="8")
-    rule=[rule1,rule2,rule3,rule4,rule5,rule6,rule7,rule8]
+    rule8=ctrl.Rule(antecedent=((x_W["F"])),consequent=y_E["A"],label="8")
+    rule9=ctrl.Rule(antecedent=((x_W["NL"] & x_H["W"])),consequent=y_E["A"],label="9")
+    rule10=ctrl.Rule(antecedent=((x_W["NL"] & x_H["VW"])),consequent=y_E["A"],label="10")
+    rule11=ctrl.Rule(antecedent=((x_W["O"] & x_H["D"])),consequent=y_E["A"],label="11")
+    rule=[rule1,rule2,rule3,rule4,rule5,rule6,rule7,rule8,rule9,rule10,rule11]
     # 系统和运行环境初始化
     system = ctrl.ControlSystem(rule)
     sim = ctrl.ControlSystemSimulation(system)
