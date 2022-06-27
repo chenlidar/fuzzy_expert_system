@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>环境作用等级评估</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style2.css">
+  </head>
+  <body>
+    <div class="ALL">
+        <h1>环境作用等级评估</h1>
+        <p>请选择共同作用的环境类型，并填入相应测量数据</p>
+        <form method="post" action="/result">
+            <ol>
+                <div>
+                    <label class="A"> <input type="checkbox"  name="env1" onclick="checkboxOnclick(this)">一般环境 </label>
+                    <div class="env1">
+                        <label>与水接触程度(0-1):<input type="text" name="env1_W"  ></label><br/>
+                        <label>年平均相对湿度(0-1):<input type="text" name="env1_T"  ></label><br/>
+                    </div>
+                </div>
+                <div>
+                    <label class="A"> <input type="checkbox"  name="env2" onclick="checkboxOnclick(this)">冻融环境 </label>
+                    <div class="env2">
+                        <label>混凝土相对饱水度(0-1):<input type="text" name="env2_W"  ></label><br/>
+                        <label>最冷月平均气温(摄氏度):<input type="text" name="env2_T"  ></label><br/>
+                        <label>平均日温差(摄氏度):<input type="text" name="env2_DT"  ></label><br/>
+                    </div>
+                </div>
+                <div>
+                    <label class="A"> <input type="checkbox"  name="env3" onclick="checkboxOnclick(this)">近海或海洋氯化物环境 </label>
+                    <div class="env3">
+                        <label>海岸线距离(km):<input type="text" name="env3_D"  ></label><br/>
+                        <label>年平均温度(摄氏度):<input type="text" name="env3_T"  ></label><br/>
+                        <label>高水位(m):<input type="text" name="env3_HL"  ></label><br/>
+                        <label>低水位(m):<input type="text" name="env3_LL"  ></label><br/>
+                        <label>水位位置(m):<input type="text" name="env3_W"  ></label><br/>
+                    </div>
+                </div>
+                <div>
+                    <label class="A"> <input type="checkbox"  name="env4" onclick="checkboxOnclick(this)">除冰盐等其他氯化物环境 </label>
+                    <div class="env4">
+                        <label> <input type="radio" value="env4_w" name="env4_1" onclick="radioOnclick(this)">水体 </label><br/>
+                        <div class="env4_w">
+                            <label>氯离子浓度(g/L):<input type="text" name="env4_w_CL"  ></label><br/>
+                        </div>
+                        <label> <input type="radio" value="env4_s" name="env4_1" onclick="radioOnclick(this)">土体 </label><br/>
+                        <div class="env4_s">
+                            <label>氯离子浓度(g/kg):<input type="text" name="env4_s_CL"  ></label><br/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="A"> <input type="checkbox"  name="env5" onclick="checkboxOnclick(this)">盐结晶环境 </label>
+                    <div class="env5">
+                        <label> <input type="radio" value="env5_w" name="env5_1" onclick="radioOnclick(this)">水体 </label><br/>
+                        <div class="env5_w">
+                            <label>硫酸根离子浓度(g/L):<input type="text" name="env5_w_S"  ></label><br/>
+                            <label>平均日温差(摄氏度):<input type="text" name="env5_w_T"  ></label><br/>
+                            <label>干湿交替程度(0-1):<input type="text" name="env5_w_D"  ></label><br/>
+                        </div>
+                        <label> <input type="radio" value="env5_s" name="env5_1" onclick="radioOnclick(this)">土体 </label><br/>
+                        <div class="env5_s">
+                            <label>硫酸根离子浓度(g/kg):<input type="text" name="env5_s_S"  ></label><br/>
+                            <label>平均日温差(摄氏度):<input type="text" name="env5_s_T"  ></label><br/>
+                            <label>干湿交替程度(0-1):<input type="text" name="env5_s_D"  ></label><br/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="A"> <input type="checkbox"  name="env6" onclick="checkboxOnclick(this)">化学腐蚀环境 </label>
+                    <div class="env6">
+                        <label> <input type="radio" value="env6_w" name="env6_1" onclick="radioOnclick(this)">水体 </label><br/>
+                        <div class="env6_w">
+                            <label>硫酸根离子浓度(g/L):<input type="text" name="env6_w_S"  ></label><br/>
+                            <label>镁离子浓度(g/L):<input type="text" name="env6_w_M"  ></label><br/>
+                            <label>CO2浓度(g/l):<input type="text" name="env6_w_C"  ></label><br/>
+                            <label>PH值:<input type="text" name="env6_w_PH"  ></label><br/>
+                            <label>海拔(km):<input type="text" name="env6_w_H"  ></label><br/>
+                            <label>干燥度系数:<input type="text" name="env6_w_D"  ></label><br/>
+                        </div>
+                        <label> <input type="radio" value="env6_s" name="env6_1" onclick="radioOnclick(this)">土体 </label><br/>
+                        <div class="env6_s">
+                            <label>硫酸根离子浓度(g/kg):<input type="text" name="env6_s_S"  ></label><br/>
+                            <label>海拔(km):<input type="text" name="env6_s_H"  ></label><br/>
+                            <label>干燥度系数:<input type="text" name="env6_s_D"  ></label><br/>
+                        </div>
+                        <label> <input type="radio" value="env6_a" name="env6_1" onclick="radioOnclick(this)">气体 </label><br/>
+                        <div class="env6_a">
+                            <label>雨水PH值:<input type="text" name="env6_a_PH"  ></label><br/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label class="A"> <input type="checkbox"  name="env7" onclick="checkboxOnclick(this)">磨蚀环境 </label>
+                    <div class="env7">
+                        <label>风力等级:<input type="text" name="env7_W"  ></label><br/>
+                        <label>汛期含沙量(1000kg/m3):<input type="text" name="env7_S"  ></label><br/>
+                        <label>是否有流冰:<input type="checkbox" name="env7_I"></label><br/>
+                    </div>
+                </div>
+                <script>
+                    function checkboxOnclick(checkbox){
+                        var div=document.getElementsByClassName(checkbox.name)[0];
+                        if(checkbox.checked == true){
+                            div.style.display="block";
+                        }
+                        else{
+                            div.style.display="none";
+                        }
+                    }
+                    function radioOnclick(radio){
+                        var radios=document.getElementsByName(radio.name);
+                        for(var i = 0; i < radios.length; i ++){
+                            var div=document.getElementsByClassName(radios[i].value)[0];
+                            if(radios[i].checked==true){
+                                div.style.display="block";
+                            }
+                            else{
+                                div.style.display="none";
+                            }
+                        }
+                    }
+                </script>
+            </ol>
+            <div class="B"><button type="submit">查看结果</button></div>
+        </form>
+    </div>
+  </body>
+</html>

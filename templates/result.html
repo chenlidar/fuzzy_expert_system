@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>环境作用等级评估</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style2.css">
+  </head>
+  <body>
+    <div class="ALL">
+        <h1>等级评估结果</h1>
+        <ul>
+            {% if tocal[1]==1 %}
+            <li>普通环境作用等级为：{{res[1]}}</li>
+            {% endif %}
+            {% if tocal[2]==1 %}
+            <li>冻融环境作用等级为：{{res[2]}}</li>
+            {% endif %}
+            {% if tocal[3]==1 %}
+            <li>近海或海洋氯化物环境作用等级为：{{res[3]}}</li>
+            {% endif %}
+            {% if tocal[4]==1 %}
+            <li>除冰盐等其他氯化物环境作用等级为：{{res[4]}}</li>
+            {% endif %}
+            {% if tocal[5]==1 %}
+            <li>盐结晶环境作用等级为：{{res[5]}}</li>
+            {% endif %}
+            {% if tocal[6]==1 %}
+            <li>化学腐蚀环境作用等级为：{{res[6]}}</li>
+            {% endif %}
+            {% if tocal[7]==1 %}
+            <li>磨蚀环境作用等级为：{{res[7]}}</li>
+            {% endif %}
+            <li>综合环境作用等级为：{{ans}}</li>
+        </ul>
+        <div class="B"><a href="/env_assess">再次测试</a></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+h1{
+    font-size: 5em;
+    text-align: center;
+    height: 300px;
+    line-height: 500px;
+}
+body{
+    background-image: url("../img/1.jpg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+a{
+    color: aliceblue;
+    font-size: 2em;
+    outline: none;
+    text-decoration: none;
+    text-align: center;
+}
